@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>테마 선택</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      width: 250px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #000000;
+      font-size: 18px;
+    }
+    select, input[type="color"], button {
+      display: block;
+      margin-bottom: 15px;
+      width: 100%;
+      padding: 8px;
+      border-radius: 4px;
+      box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    }
+    select {
+      appearance: none; /* Remove default dropdown arrow */
+      background: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E') no-repeat right 10px center;
+      background-size: 10px;
+      background-color: white;
+    }
+    input[type="color"] {
+      height: 38px; /* Match height with select/button */
+      padding: 5px; /* Adjust padding for color input */
+    }
+    button {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 15px;
+      padding: 10px 20px;
+      margin: 20px 0;
+      width: 250px;
+      height: 41px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.3s ease;
+      font-weight: bold;
+      font-size: 14px;
+    }
+    button:hover {
+      background-color: #005BDD;
+      transform: translateY(2px);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+    button:active {
+      background-color: #0026a3;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+    
+    #customColorContainer {
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid #eee;
+    }
+  </style>
+</head>
+<body>
+  <label for="theme">테마 선택:</label>
+  <select id="theme">
+    <option value="none">없음</option>
+    <option value="cave">동굴</option>
+    <option value="shadow">그림자</option>
+    <option value="darkmode">다크모드</option>
+    <option value="rainbow">무지개</option>
+    <option value="grayscale">흑백</option>
+    <option value="blur">블러</option>
+    <option value="custom">커스텀 색상</option>
+    <option value="neon">네온</option>
+    <option value="shake">흔들림</option>
+    <option value="3d">3d</option>
+    <option value="glitch">글리치</option>
+    <option value="Left/Right-Inversion">좌우반전</option>
+    <option value="No-text">글자 숨김</option>
+    <option value="3d-shake">3d 흔들기</option>
+  </select>
+
+  <div id="customColorContainer" style="display: none;">
+    <label for="color">색상 선택:</label>
+    <input type="color" id="color" value="#ff0000">
+  </div>
+
+  <button id="apply">적용</button>
+
+  <script src="popup.js"></script>
+</body>
+</html>

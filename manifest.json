@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "엔트리-Blokkleur",
+  "version": "1.0",
+  "description": "엔트리 블록에 테마를 적용해 줍니다.",
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "테마 적용"
+  },
+  "content_scripts": [
+    {
+    "matches": ["<all_urls>"],
+    "js": ["content.js"],
+    "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+  }
